@@ -1,0 +1,25 @@
+<head></head>
+<style>
+table, th, td {
+  border-collapse:collapse;
+  border-style: solid;
+  border-width:2px;
+}
+</style>
+<body>
+    <h1>Hell yeah brother sample template</h1>
+    <table>
+        <tr>
+            {% for column in df.columns %}
+            <th>{{ column }}</th>
+            {% endfor %}
+        </tr>
+        {% for idx, row in df.iterrows() %}
+        <tr>
+            {% for colname in df.columns %}
+            <td>{{ row[colname] }}</td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </table>
+</body>
